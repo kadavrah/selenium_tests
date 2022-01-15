@@ -6,7 +6,7 @@ public class GoogleTest extends WebDriverBase {
 
     @Test
     public void testOpenGooglePage() {
-        getWebDriver().get("https://google.com/choto_naiti");
+        getWebDriver().get("https://google.com/newpath");
     }
 
 }
