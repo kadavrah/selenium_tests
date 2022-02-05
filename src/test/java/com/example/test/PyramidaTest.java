@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PyramidaTest extends WebDriverBase {
 
@@ -26,13 +28,13 @@ public class PyramidaTest extends WebDriverBase {
     @Test
     public void testBasket() throws InterruptedException {
         getWebDriver().get("https://pyramida.info/");
-        WebElement dL = getWebDriver().findElement(By.className("one_item_block"));
+        WebElement dl = getWebDriver().findElement(By.className("one_item_block"));
         Actions actionProvider = new Actions(getWebDriver());
-        actionProvider.moveToElement(dL).build().perform();
+        actionProvider.moveToElement(dl).build().perform();
         Thread.sleep(1000);
         WebElement dl2 =getWebDriver().findElement(By.className("btn-success"));
         dl2.click();
-        Thread.sleep(1000);
+        getWait().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Продолжить просмотр']")));//ожидание появления элемента
         WebElement dl3 = getWebDriver().findElement(By.xpath("//span[text()='Продолжить просмотр']"));
         dl3.click();
         Thread.sleep(1000);
