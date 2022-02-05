@@ -44,7 +44,5 @@ public class PyramidaTest extends WebDriverBase {
         WebElement dl5 = getWebDriver().findElement(By.xpath("//td[text()='Dying Light 2 Stay Human Стандартное издание (PS5)']"));
 
         assertTrue(dl5.isDisplayed());
-
-
     }
 }
